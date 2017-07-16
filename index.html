@@ -7,14 +7,17 @@
   </head>
   <body>
  <div ng-controller="AController">
-    I am the {{ letter }} and I am {{ type }}
-    <div ng-controller="BController">
-      I am the {{ letter }} and I am the {{ type }}
-      <div ng-controller="CController">
-        I am the {{ letter }} and I am the {{ type }}
-      </div>
-    </div>
+    I am the {{ name }} and I am the {{ relation }}
   </div>
+
+  <div ng-controller="BController">
+    I am the {{ name }} and I am the {{ relation }}
+  </div>
+
+  <div ng-controller="CController">
+        I am the {{ name }} and I am the {{ relation }}
+  </div>
+
   <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

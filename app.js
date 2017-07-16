@@ -1,16 +1,25 @@
 var myApp = angular.module('app', []);
+var $injector = angular.injector();
 
-myApp.controller('AController', ['$scope', function($scope) {
-  $scope.letter = '\'A\''
-  $scope.type = 'uppercase'
+
+myApp.factory('Data', function() {
+  return {Field: 'ABC'};
+})
+
+myApp.controller('AController', ['$scope','Data', function($scope, Data) {
+  $scope.name = Data.Field;
+  $scope.relation = 'Mother'
 }]);
 
-myApp.controller('BController', ['$scope', function($scope) {
-  $scope.letter = '\'b\''
-  $scope.type = 'lowercase'
+myApp.controller('BController', ['$scope','Data', function($scope, Data) {
+  $scope.name = Data.Field;
+  $scope.relation = 'Sister'
 }]);
 
-myApp.controller('CController', ['$scope', function($scope) {
-  $scope.letter = '\'Cc\''
-  $scope.type = 'both'
+myApp.controller('CController', ['$scope', 'Data', function($scope, Data) {
+  $scope.name = Data.Field;
+  $scope.relation = 'Wife'
 }]);
+
+
+/* https://stackoverflow.com/questions/21919962/share-data-between-angularjs-controllers */
