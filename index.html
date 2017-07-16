@@ -6,7 +6,15 @@
     src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   </head>
   <body>
-
+ <div ng-controller="AController">
+    I am the {{ letter }} and I am {{ type }}
+    <div ng-controller="BController">
+      I am the {{ letter }} and I am the {{ type }}
+      <div ng-controller="CController">
+        I am the {{ letter }} and I am the {{ type }}
+      </div>
+    </div>
+  </div>
   <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
